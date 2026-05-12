@@ -922,10 +922,9 @@ async function sendMsg(){
   hist.push({role:'user',content:txt});save();appendDOM('user',txt);
   showDots();busy=true;
   try{
-    const key=window.OPENAI_API_KEY||'';
-    const r=await fetch('https://api.openai.com/v1/chat/completions',{
+    const r=await fetch('/api/chat',{
       method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+      headers:{'Content-Type':'application/json'},
       body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'system',content:SP},...hist],max_tokens:600,temperature:0.75})
     });
     const d=await r.json();
