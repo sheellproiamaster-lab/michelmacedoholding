@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michel Macedo Holding | Consultoria Estratégica Premium</title>
+<meta name="description" content="Michel Macedo Holding — Consultoria Estratégica, Assessoria Acadêmica, Soluções Tecnológicas e Desenvolvimento Humano para empresas e estudantes em todo o Brasil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FAF7F2;
+  --cream-2:#F4EDE1;
+  --cream-3:#EDE0CF;
+  --cream-4:#E3D0B8;
+  --white:#FFFFFF;
+  --orange:#C8571A;
+  --orange-2:#D96B28;
+  --orange-3:#E8874A;
+  --orange-pale:#FDF0E6;
+  --orange-glow:rgba(200,87,26,0.10);
+  --gold:#A87820;
+  --gold-2:#C49A35;
+  --text-dark:#1C1208;
+  --text-mid:#4A3520;
+  --text-soft:#7A6048;
+  --text-light:#A89070;
+  --border:rgba(200,87,26,0.15);
+  --border-2:rgba(200,87,26,0.25);
+  --font-d:'Cormorant Garamond',serif;
+  --font-b:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:var(--cream);color:var(--text-dark);overflow-x:hidden;font-size:16px;line-height:1.7;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes bounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-5px);}}
+@keyframes shimmer{0%{background-position:200% center;}100%{background-position:-200% center;}}
+
+/* ── CHAT BUTTON ── */
+/* CHAT FLUTUANTE */
+#chat-float{
+  position:fixed;top:20px;right:20px;z-index:1000;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+#chat-float .float-av{
+  width:58px;height:58px;border-radius:50%;overflow:hidden;
+  border:2.5px solid var(--orange);
+  background:var(--orange-pale);
+  box-shadow:0 4px 20px rgba(200,87,26,0.25),0 1px 6px rgba(28,18,8,0.08);
+  transition:transform .3s,box-shadow .3s;
+  cursor:pointer;
+}
+#chat-float .float-av img{width:100%;height:100%;object-fit:cover;display:block;}
+#chat-float:hover .float-av{
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(200,87,26,0.38),0 2px 8px rgba(28,18,8,0.1);
+}
+#chat-float .float-card{
+  background:var(--white);
+  border:1.5px solid var(--border-2);
+  border-radius:24px;
+  padding:7px 16px;
+  font-family:var(--font-b);font-size:12px;font-weight:500;
+  color:var(--text-dark);
+  cursor:pointer;
+  white-space:nowrap;
+  box-shadow:0 2px 12px rgba(200,87,26,0.12),0 1px 4px rgba(28,18,8,0.05);
+  transition:all .25s;
+  letter-spacing:.3px;
+}
+#chat-float .float-card:hover{
+  background:var(--orange);color:var(--white);
+  border-color:var(--orange);
+  box-shadow:0 4px 20px rgba(200,87,26,0.3);
+  transform:translateY(-1px);
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:0 48px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all .4s;
+}
+nav.scrolled{
+  background:rgba(250,247,242,0.97);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 1px 16px rgba(200,87,26,0.07);
+}
+.nav-logo{
+  font-family:var(--font-d);font-size:19px;font-weight:600;
+  color:var(--text-dark);text-decoration:none;letter-spacing:.3px;
+}
+.nav-logo span{color:var(--orange);}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;padding:120px 48px 80px;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 55% 60% at 75% 45%,rgba(200,87,26,0.06) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 50% at 15% 60%,rgba(168,120,32,0.04) 0%,transparent 65%),
+    radial-gradient(ellipse 30% 30% at 50% 10%,rgba(200,87,26,0.03) 0%,transparent 60%),
+    var(--cream);
+}
+.hero-line{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent 0%,var(--orange) 25%,var(--gold-2) 50%,var(--orange) 75%,transparent 100%);
+}
+.hero-grain{
+  position:absolute;inset:0;pointer-events:none;opacity:.018;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero-content{position:relative;z-index:1;max-width:780px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:32px;
+  opacity:0;animation:fadeUp .7s ease forwards .15s;
+}
+.hero-badge::before{content:'';display:block;width:28px;height:1px;background:var(--orange);}
+h1.hero-title{
+  font-family:var(--font-d);
+  font-size:clamp(56px,7.5vw,104px);
+  font-weight:300;line-height:.96;
+  color:var(--text-dark);margin-bottom:12px;
+  opacity:0;animation:fadeUp .7s ease forwards .3s;
+  letter-spacing:-1px;
+}
+h1.hero-title em{font-style:italic;color:var(--orange);}
+.hero-sub{
+  font-family:var(--font-d);
+  font-size:clamp(20px,2.8vw,34px);font-weight:300;
+  line-height:1.25;color:var(--text-soft);
+  margin-bottom:36px;
+  opacity:0;animation:fadeUp .7s ease forwards .42s;
+}
+.hero-desc{
+  font-size:16px;line-height:1.9;color:var(--text-mid);
+  max-width:520px;margin-bottom:52px;
+  opacity:0;animation:fadeUp .7s ease forwards .54s;
+}
+.hero-ctas{
+  display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .7s ease forwards .66s;
+}
+
+/* ── BUTTONS ── */
+.btn-p{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--orange);color:var(--white);
+  padding:15px 32px;font-family:var(--font-b);font-size:12px;
+  font-weight:500;letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;border:none;border-radius:3px;cursor:pointer;
+  transition:all .3s;
+  box-shadow:0 4px 20px rgba(200,87,26,0.30);
+}
+.btn-p:hover{
+  background:var(--orange-2);
+  box-shadow:0 8px 32px rgba(200,87,26,0.45);
+  transform:translateY(-2px);
+}
+.btn-o{
+  display:inline-flex;align-items:center;gap:9px;
+  background:transparent;color:var(--text-dark);
+  padding:14px 32px;font-family:var(--font-b);font-size:12px;
+  font-weight:500;letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;border:1.5px solid var(--border-2);
+  border-radius:3px;cursor:pointer;transition:all .3s;
+}
+.btn-o:hover{border-color:var(--orange);color:var(--orange);}
+
+/* ── DECO SVG ── */
+.hero-deco{
+  position:absolute;right:-20px;top:50%;transform:translateY(-50%);
+  width:460px;height:460px;opacity:.035;pointer-events:none;
+}
+
+/* ── SECTION BASE ── */
+section{position:relative;z-index:1;}
+.si{max-width:1120px;margin:0 auto;padding:0 48px;}
+.sec-label{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:18px;
+}
+.sec-label::before{content:'';display:block;width:22px;height:1px;background:var(--orange);}
+.sec-title{
+  font-family:var(--font-d);
+  font-size:clamp(32px,4vw,52px);font-weight:300;
+  line-height:1.1;color:var(--text-dark);margin-bottom:16px;
+}
+.sec-title em{font-style:italic;color:var(--orange);}
+.sec-lead{font-size:16px;color:var(--text-mid);max-width:580px;line-height:1.85;}
+
+/* ── DIVIDER ── */
+.hdiv{
+  width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cream-3),transparent);
+}
+
+/* ── 7S FRAMEWORK ── */
+#framework{padding:100px 0;background:var(--cream-2);}
+.s7-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:16px;margin-top:56px;
+}
+.s7-card{
+  background:var(--white);
+  border:1.5px solid transparent;
+  border-radius:4px;
+  padding:36px 28px;
+  position:relative;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+}
+.s7-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(200,87,26,0.03) 0%,transparent 60%);
+  opacity:0;transition:opacity .35s;
+}
+.s7-card:hover{
+  border-color:var(--border-2);
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(200,87,26,0.10),0 2px 8px rgba(28,18,8,0.05);
+}
+.s7-card:hover::after{opacity:1;}
+.s7-num{
+  font-family:var(--font-d);font-size:42px;font-weight:300;
+  color:rgba(200,87,26,0.15);line-height:1;
+  position:absolute;top:18px;right:20px;
+}
+.s7-letter{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:38px;height:38px;
+  background:var(--orange-pale);
+  border:1px solid rgba(200,87,26,0.18);
+  border-radius:50%;
+  font-family:var(--font-d);font-size:18px;font-weight:600;
+  color:var(--orange);
+  margin-bottom:16px;
+}
+.s7-name{
+  font-family:var(--font-d);font-size:18px;font-weight:500;
+  color:var(--text-dark);margin-bottom:8px;line-height:1.2;
+}
+.s7-desc{font-size:13px;color:var(--text-soft);line-height:1.7;}
+
+/* ── SERVICES ── */
+#services{padding:100px 0;background:var(--cream);}
+.svc-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-top:56px;
+}
+.svc-card{
+  background:var(--white);
+  border:1.5px solid var(--cream-3);
+  border-radius:4px;
+  padding:42px 34px;
+  position:relative;overflow:hidden;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+}
+.svc-card.featured{
+  background:var(--orange);
+  border-color:var(--orange);
+}
+.svc-card:not(.featured):hover{
+  border-color:var(--orange-3);
+  transform:translateY(-4px);
+  box-shadow:0 16px 48px rgba(200,87,26,0.10),0 2px 8px rgba(28,18,8,0.05);
+}
+.svc-card.featured:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 48px rgba(200,87,26,0.35);
+}
+.svc-n{
+  position:absolute;top:20px;right:24px;
+  font-family:var(--font-d);font-size:44px;font-weight:300;
+  color:rgba(200,87,26,0.07);line-height:1;
+}
+.svc-card.featured .svc-n{color:rgba(255,255,255,0.15);}
+.svc-icon{
+  width:44px;height:44px;
+  background:var(--orange-pale);
+  border:1px solid rgba(200,87,26,0.15);
+  border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.svc-card.featured .svc-icon{
+  background:rgba(255,255,255,0.2);
+  border-color:rgba(255,255,255,0.3);
+}
+.svc-icon svg{width:20px;height:20px;stroke:var(--orange);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.svc-card.featured .svc-icon svg{stroke:#fff;}
+.svc-badge{
+  display:inline-block;font-size:9px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--orange);background:var(--orange-pale);
+  border:1px solid rgba(200,87,26,0.15);
+  padding:3px 8px;border-radius:20px;margin-bottom:10px;
+}
+.svc-card.featured .svc-badge{
+  color:#fff;background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3);
+}
+.svc-title{
+  font-family:var(--font-d);font-size:21px;font-weight:500;
+  color:var(--text-dark);margin-bottom:10px;line-height:1.25;
+}
+.svc-card.featured .svc-title{color:#fff;}
+.svc-desc{font-size:13px;color:var(--text-soft);line-height:1.75;}
+.svc-card.featured .svc-desc{color:rgba(255,255,255,0.82);}
+.svc-reg{
+  display:inline-block;margin-top:14px;
+  font-size:10px;font-weight:500;letter-spacing:1px;
+  color:var(--white);background:rgba(255,255,255,0.18);
+  border:1px solid rgba(255,255,255,0.3);
+  padding:4px 10px;border-radius:3px;
+}
+
+/* ── VALOR ── */
+#valor{padding:100px 0;background:var(--cream-2);}
+.valor-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;margin-top:56px;
+}
+.vp{
+  background:var(--white);border:1.5px solid var(--cream-3);
+  border-radius:4px;padding:44px 40px;
+  transition:all .35s;
+}
+.vp:hover{
+  border-color:var(--border-2);
+  box-shadow:0 12px 40px rgba(200,87,26,0.08);
+}
+.vp.accent{
+  background:var(--orange-pale);
+  border-color:rgba(200,87,26,0.2);
+}
+.vp.accent:hover{
+  border-color:var(--orange);
+  box-shadow:0 12px 40px rgba(200,87,26,0.14);
+}
+.vp-label{
+  font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+}
+.vp-label::before{content:'';display:block;width:18px;height:1px;background:var(--orange);}
+.vp-title{
+  font-family:var(--font-d);font-size:26px;font-weight:400;
+  color:var(--text-dark);margin-bottom:22px;line-height:1.2;
+}
+.vp-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.vp-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:13px;color:var(--text-mid);line-height:1.7;
+}
+.vp-list li::before{
+  content:'';display:block;width:5px;height:5px;border-radius:50%;
+  background:var(--orange);margin-top:7px;flex-shrink:0;
+}
+.valor-metrics{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:16px;margin-top:16px;
+}
+.vm{
+  background:var(--white);border:1.5px solid var(--cream-3);
+  border-radius:4px;padding:30px 20px;text-align:center;
+  transition:all .35s;
+}
+.vm:hover{border-color:var(--border-2);transform:translateY(-3px);box-shadow:0 8px 28px rgba(200,87,26,0.08);}
+.vm-val{
+  font-family:var(--font-d);font-size:38px;font-weight:300;
+  color:var(--orange);line-height:1;margin-bottom:6px;
+}
+.vm-label{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-soft);}
+
+/* ── CTA ── */
+#cta-section{padding:80px 0;background:var(--cream);}
+.cta-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;margin-top:48px;
+}
+.cta-card{
+  background:var(--white);border:1.5px solid var(--cream-3);
+  border-radius:4px;padding:44px 40px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:16px;
+  transition:all .35s;text-decoration:none;
+}
+.cta-card:hover{
+  border-color:var(--orange-3);transform:translateY(-4px);
+  box-shadow:0 16px 48px rgba(200,87,26,0.10);
+}
+.cta-card.accent-card{
+  background:var(--orange-pale);border-color:rgba(200,87,26,0.2);
+}
+.cta-card.accent-card:hover{
+  border-color:var(--orange);
+  box-shadow:0 16px 48px rgba(200,87,26,0.15);
+}
+.cc-ico{
+  width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.cc-ico.wpp{background:rgba(37,211,102,0.1);border:1.5px solid rgba(37,211,102,0.2);}
+.cc-ico.ig{background:var(--orange-pale);border:1.5px solid rgba(200,87,26,0.18);}
+.cc-ico svg{width:22px;height:22px;}
+.cc-title{
+  font-family:var(--font-d);font-size:22px;font-weight:500;
+  color:var(--text-dark);line-height:1.2;
+}
+.cc-sub{font-size:13px;color:var(--text-soft);line-height:1.65;}
+.cc-arrow{font-size:18px;color:var(--orange);margin-top:auto;font-weight:400;}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--cream-2);
+  border-top:1px solid var(--cream-3);
+  padding:56px 0 32px;
+}
+.fi{max-width:1120px;margin:0 auto;padding:0 48px;}
+.ft{display:flex;align-items:flex-start;justify-content:space-between;gap:48px;margin-bottom:36px;}
+.fb-logo{font-family:var(--font-d);font-size:22px;font-weight:600;color:var(--text-dark);margin-bottom:6px;}
+.fb-logo span{color:var(--orange);}
+.fb-sub{font-size:13px;color:var(--text-light);line-height:1.7;}
+.fl{display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
+.fl a{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--text-soft);text-decoration:none;transition:color .2s;
+}
+.fl a:hover{color:var(--orange);}
+.fdiv{height:1px;background:var(--cream-3);margin-bottom:24px;}
+.fbot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.fbot p,.fbot span{font-size:12px;color:var(--text-light);letter-spacing:.4px;}
+
+/* ── CHAT MODAL ── */
+#chat-modal{
+  display:none;position:fixed;inset:0;z-index:9999;
+  align-items:center;justify-content:center;
+  background:rgba(28,18,8,0.5);backdrop-filter:blur(8px);
+}
+#chat-modal.open{display:flex;animation:fadeIn .22s ease;}
+.chat-box{
+  background:var(--cream);width:100%;max-width:440px;
+  max-height:90vh;display:flex;flex-direction:column;
+  border-radius:10px;overflow:hidden;
+  box-shadow:0 32px 80px rgba(28,18,8,0.22),0 0 0 1px rgba(200,87,26,0.15);
+}
+/* minimal header */
+.ch{
+  background:var(--white);padding:14px 18px;
+  display:flex;align-items:center;gap:12px;
+  border-bottom:1px solid var(--cream-3);
+}
+.ch-av{
+  width:38px;height:38px;border-radius:50%;overflow:hidden;
+  border:2px solid var(--orange-3);flex-shrink:0;
+  background:var(--cream-2);
+}
+.ch-av img{width:100%;height:100%;object-fit:cover;display:block;}
+.ch-name{
+  font-family:var(--font-d);font-size:16px;font-weight:500;
+  color:var(--text-dark);flex:1;
+}
+.ch-close{
+  background:none;border:none;color:var(--text-light);cursor:pointer;
+  font-size:20px;line-height:1;transition:color .2s;padding:4px;
+}
+.ch-close:hover{color:var(--orange);}
+.chat-msgs{
+  flex:1;overflow-y:auto;padding:18px 20px;
+  display:flex;flex-direction:column;gap:10px;
+  min-height:180px;max-height:320px;
+  background:var(--cream);
+}
+.msg{max-width:86%;padding:10px 14px;border-radius:6px;font-size:14px;line-height:1.65;}
+.msg.bot{
+  background:var(--white);color:var(--text-dark);
+  align-self:flex-start;border-radius:2px 10px 10px 10px;
+  border:1px solid var(--cream-3);
+}
+.msg.user{
+  background:var(--orange);color:#fff;
+  align-self:flex-end;border-radius:10px 2px 10px 10px;
+}
+.msg.typing{
+  background:var(--white);align-self:flex-start;
+  border-radius:2px 10px 10px 10px;padding:13px 16px;
+  border:1px solid var(--cream-3);
+}
+.dots{display:flex;gap:5px;align-items:center;}
+.dots span{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--text-light);animation:bounce .9s infinite;
+}
+.dots span:nth-child(2){animation-delay:.15s;}
+.dots span:nth-child(3){animation-delay:.3s;}
+.cia{
+  padding:14px 18px;
+  border-top:1px solid var(--cream-3);
+  background:var(--white);
+  display:flex;gap:8px;align-items:flex-end;
+}
+.cia textarea{
+  flex:1;border:1.5px solid var(--cream-3);border-radius:6px;
+  padding:9px 13px;font-family:var(--font-b);font-size:14px;
+  color:var(--text-dark);background:var(--cream);resize:none;
+  outline:none;transition:border .2s;max-height:100px;line-height:1.5;
+}
+.cia textarea:focus{border-color:var(--orange);}
+.send-btn{
+  width:38px;height:38px;background:var(--orange);border:none;
+  border-radius:6px;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;transition:background .2s;flex-shrink:0;
+}
+.send-btn:hover{background:var(--orange-2);}
+.send-btn svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.byline{
+  padding:7px 18px 10px;text-align:center;
+  font-size:11px;color:var(--text-light);letter-spacing:.5px;
+  background:var(--white);
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .s7-grid{grid-template-columns:repeat(2,1fr);}
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .valor-grid{grid-template-columns:1fr;}
+  .valor-metrics{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:640px){
+  nav,#hero,.si,.fi{padding-left:20px;padding-right:20px;}
+  #chat-float{top:14px;right:14px;}
+  .s7-grid{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .cta-grid{grid-template-columns:1fr;}
+  .ft{flex-direction:column;}
+  .fl{align-items:flex-start;}
+  .fbot{flex-direction:column;align-items:flex-start;}
+  .chat-box{max-height:100vh;border-radius:0;}
+  .valor-metrics{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- CHAT FLUTUANTE -->
+<div id="chat-float">
+  <div class="float-av" onclick="openChat()">
+    <img src="avatar-hold.jpeg" alt="Chat Hold"
+      onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-family:Cormorant Garamond,serif;font-size:20px;font-weight:600;color:var(--orange);\'>CH</span>'">
+  </div>
+  <div class="float-card" onclick="openChat()">Falar com Chat Hold</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Michel Macedo <span>Holding</span></a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content si" style="padding-top:0;padding-bottom:0;">
+    <div class="hero-badge">Consultoria · Estratégia · Inovação</div>
+    <h1 class="hero-title">Michel<br><em>Macedo</em></h1>
+    <p class="hero-sub">Holding Estratégica &amp; Consultoria Premium</p>
+    <p class="hero-desc">Transformamos empresas, carreiras e trajetórias acadêmicas através de consultoria estratégica, inovação tecnológica e desenvolvimento humano de alto impacto — para todo o Brasil.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/5561993096532?text=Olá%20Michel!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20serviços%20da%20Holding." target="_blank" class="btn-p">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Fale comigo
+      </a>
+      <a href="https://www.instagram.com/michel_macedo_holding?igsh=Y3I1bW9yZmI0Znk2" target="_blank" class="btn-o">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Me siga no Instagram
+      </a>
+    </div>
+  </div>
+  <svg class="hero-deco" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="230" cy="230" r="220" stroke="#C8571A" stroke-width="0.6"/>
+    <circle cx="230" cy="230" r="170" stroke="#C8571A" stroke-width="0.4"/>
+    <circle cx="230" cy="230" r="110" stroke="#C8571A" stroke-width="0.4"/>
+    <circle cx="230" cy="230" r="55"  stroke="#C8571A" stroke-width="0.4"/>
+    <line x1="10"  y1="230" x2="450" y2="230" stroke="#C8571A" stroke-width="0.3"/>
+    <line x1="230" y1="10"  x2="230" y2="450" stroke="#C8571A" stroke-width="0.3"/>
+    <line x1="65"  y1="65"  x2="395" y2="395" stroke="#C8571A" stroke-width="0.3"/>
+    <line x1="395" y1="65"  x2="65"  y2="395" stroke="#C8571A" stroke-width="0.3"/>
+  </svg>
+</section>
+
+<!-- 7S -->
+<section id="framework">
+  <div class="si">
+    <div class="sec-label">Método</div>
+    <h2 class="sec-title">Como a nossa<br><em>estratégia funciona</em></h2>
+    <p class="sec-lead">Sete dimensões integradas que garantem coerência, profundidade e resultados consistentes em cada projeto.</p>
+    <div class="s7-grid">
+      <div class="s7-card">
+        <div class="s7-num">01</div>
+        <div class="s7-letter">S</div>
+        <div class="s7-name">Strategy</div>
+        <div class="s7-desc">Planos de crescimento orientados a resultados mensuráveis e posicionamento competitivo de longo prazo.</div>
+      </div>
+      <div class="s7-card">
+        <div class="s7-num">02</div>
+        <div class="s7-letter">S</div>
+        <div class="s7-name">Structure</div>
+        <div class="s7-desc">Arquitetura organizacional eficiente, com clareza de papéis e fluxos que suportam o crescimento.</div>
+      </div>
+      <div class="s7-card">
+        <div class="s7-num">03</div>
+        <div class="s7-letter">S</div>
+        <div class="s7-name">Systems</div>
+        <div class="s7-desc">Processos e tecnologias que automatizam, integram e potencializam cada área de atuação.</div>
+      </div>
+      <div class="s7-card">
+        <div class="s7-num">04</div>
+        <div class="s7-letter">S</div>
+        <div class="s7-name">Shared Values</div>
+        <div class="s7-desc">Excelência, ética, inovação e impacto humano — os valores que norteiam cada entrega.</div>
+      </div>
+      <div class="s7-card">
+        <div class="s7-num">05</div>
+        <div class="s7-letter">S</div>
+        <div class="s7-name">Style</div>
+        <div class="s7-desc">Liderança consultiva, próxima e orientada ao desenvolvimento humano em cada interação.</div>
+      </div>
+      <div class="s7-card">
+        <div class="s7-num">06</div>
+        <div class="s7-letter">S</div>
+        <div class="s7-name">Staff</div>
+        <div class="s7-desc">Especialistas multidisciplinares em neuropsicopedagogia, tecnologia, gestão e conteúdo.</div>
+      </div>
+      <div class="s7-card">
+        <div class="s7-num">07</div>
+        <div class="s7-letter">S</div>
+        <div class="s7-name">Skills</div>
+        <div class="s7-desc">Competências únicas na interseção entre ciências cognitivas, inovação digital e estratégia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="si">
+    <div class="sec-label">Áreas de Atuação</div>
+    <h2 class="sec-title">O que a <em>Holding</em><br>entrega</h2>
+    <p class="sec-lead">Seis frentes de atuação integradas, lideradas por um especialista com visão única de desenvolvimento humano e inovação.</p>
+    <div class="svc-grid">
+
+      <!-- 1 — FEATURED: Neuropsicopedagogia -->
+      <div class="svc-card featured">
+        <div class="svc-n">01</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a9 9 0 019 9c0 3.6-2.1 6.7-5.2 8.2V21H8.2v-1.8A9 9 0 013 11a9 9 0 019-9z"/><path d="M9 11h6M12 8v6"/></svg>
+        </div>
+        <div class="svc-badge">Especialidade Principal</div>
+        <div class="svc-title">Neuropsicopedagogia</div>
+        <div class="svc-desc">Avaliação, intervenção e desenvolvimento de potencial humano com base nas neurociências. Superação de barreiras de aprendizagem, competências cognitivas e socioemocionais para crianças, jovens e adultos.</div>
+        <span class="svc-reg">SBNPp nº 24796</span>
+      </div>
+
+      <!-- 2 -->
+      <div class="svc-card">
+        <div class="svc-n">02</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <div class="svc-title">Consultoria Estratégica</div>
+        <div class="svc-desc">Diagnóstico organizacional, planejamento estratégico e mentoria executiva para pequenas e médias empresas que buscam crescimento estruturado e resultados consistentes.</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="svc-card">
+        <div class="svc-n">03</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="svc-title">Assessoria Acadêmica</div>
+        <div class="svc-desc">Suporte especializado para universitários em todo o Brasil: TCC, pesquisas científicas, projetos de extensão e desenvolvimento de competências acadêmicas de alto desempenho.</div>
+      </div>
+
+      <!-- 4 -->
+      <div class="svc-card">
+        <div class="svc-n">04</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="svc-title">Soluções Tecnológicas</div>
+        <div class="svc-desc">Desenvolvimento de plataformas SaaS, automações com inteligência artificial e produtos digitais sob medida para empresas que querem escalar com tecnologia.</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="svc-card">
+        <div class="svc-n">05</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="svc-title">Treinamento &amp; Desenvolvimento</div>
+        <div class="svc-desc">Programas de capacitação corporativa, workshops de neurociência aplicada, liderança e produtividade para equipes que buscam performance de excelência.</div>
+      </div>
+
+      <!-- 6 -->
+      <div class="svc-card">
+        <div class="svc-n">06</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="svc-title">Criação de Conteúdo Digital</div>
+        <div class="svc-desc">Produção estratégica de conteúdo para marcas e profissionais: copywriting, roteiros, materiais educativos e posicionamento de autoridade nas redes sociais.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROPOSTA DE VALOR -->
+<section id="valor">
+  <div class="si">
+    <div class="sec-label">Por que a Holding</div>
+    <h2 class="sec-title">Proposta de<br><em>Valor</em></h2>
+    <p class="sec-lead">Uma visão estratégica clara sobre o que diferencia a Michel Macedo Holding e o impacto que cada projeto gera.</p>
+    <div class="valor-grid">
+      <div class="vp">
+        <div class="vp-label">Para Empresas · B2B</div>
+        <div class="vp-title">Crescimento com<br>inteligência estratégica</div>
+        <ul class="vp-list">
+          <li>Diagnóstico integrado: estratégia, processos, pessoas e tecnologia em uma visão única</li>
+          <li>Metodologias robustas aplicadas à realidade das PMEs brasileiras</li>
+          <li>Aceleração de resultados com menos retrabalho e mais clareza de direção</li>
+          <li>Soluções tecnológicas proprietárias que escalam junto com o negócio</li>
+          <li>Parceiro estratégico de longo prazo, não apenas um prestador pontual</li>
+        </ul>
+      </div>
+      <div class="vp accent">
+        <div class="vp-label">Para Pessoas · B2C</div>
+        <div class="vp-title">Desenvolvimento com<br>propósito e resultado</div>
+        <ul class="vp-list">
+          <li>Neuropsicopedagogia de alto nível aplicada ao seu potencial único</li>
+          <li>Assessoria acadêmica que transforma trajetórias universitárias</li>
+          <li>Treinamentos que desenvolvem competências reais e duradouras</li>
+          <li>Conteúdo e posicionamento que constroem autoridade genuína</li>
+          <li>Atendimento personalizado, premium e orientado a quem você quer ser</li>
+        </ul>
+      </div>
+    </div>
+    <div class="valor-metrics">
+      <div class="vm"><div class="vm-val">+10</div><div class="vm-label">Anos de Expertise</div></div>
+      <div class="vm"><div class="vm-val">6</div><div class="vm-label">Frentes de Atuação</div></div>
+      <div class="vm"><div class="vm-val">B2B</div><div class="vm-label">Consultoria Empresarial</div></div>
+      <div class="vm"><div class="vm-val">B2C</div><div class="vm-label">Atendimento Pessoal</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-section">
+  <div class="si">
+    <div class="sec-label">Conecte-se</div>
+    <h2 class="sec-title">Pronto para o próximo<br><em>passo?</em></h2>
+    <div class="cta-grid">
+      <a href="https://wa.me/5561993096532?text=Olá%20Michel!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20serviços%20da%20Holding." target="_blank" class="cta-card">
+        <div class="cc-ico wpp">
+          <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="cc-title">Fale comigo no WhatsApp</div>
+        <div class="cc-sub">(61) 99309-6532 · Resposta rápida · Atendimento premium</div>
+        <div class="cc-arrow">→</div>
+      </a>
+      <a href="https://www.instagram.com/michel_macedo_holding?igsh=Y3I1bW9yZmI0Znk2" target="_blank" class="cta-card accent-card">
+        <div class="cc-ico ig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div class="cc-title">Me siga no Instagram</div>
+        <div class="cc-sub">@michel_macedo_holding · Conteúdo diário sobre estratégia, negócios e desenvolvimento</div>
+        <div class="cc-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="ft">
+      <div>
+        <div class="fb-logo">Michel Macedo <span>Holding</span></div>
+        <div class="fb-sub">Consultoria Estratégica · Tecnologia · Desenvolvimento Humano</div>
+      </div>
+      <div class="fl">
+        <a href="mailto:oficial@michelhold.net">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          oficial@michelhold.net
+        </a>
+        <a href="https://wa.me/5561993096532" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (61) 99309-6532
+        </a>
+        <a href="https://www.instagram.com/michel_macedo_holding?igsh=Y3I1bW9yZmI0Znk2" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @michel_macedo_holding
+        </a>
+      </div>
+    </div>
+    <div class="fdiv"></div>
+    <div class="fbot">
+      <p>© 2026 Michel Macedo Holding · Todos os direitos reservados</p>
+      <span>CNPJ: 54.760.141/0001-31</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT MODAL -->
+<div id="chat-modal">
+  <div class="chat-box">
+    <div class="ch">
+      <div class="ch-av">
+        <img src="avatar-hold.jpeg" alt="Chat Hold"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-family:Cormorant Garamond,serif;font-size:16px;font-weight:600;color:var(--orange);\'>CH</span>'">
+      </div>
+      <div class="ch-name">Falar com Chat Hold</div>
+      <button class="ch-close" onclick="closeChat()">×</button>
+    </div>
+    <div class="chat-msgs" id="chat-msgs"></div>
+    <div class="cia">
+      <textarea id="chat-input" rows="1" placeholder="Digite sua mensagem..." onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="send-btn" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+    <div class="byline">By Michel Macedo Holding</div>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',scrollY>40);
+});
+
+const SK='mmh_v2';
+const SP=`Você é o Chat Hold, assistente virtual oficial e EXCLUSIVO da Michel Macedo Holding.
+
+## SOBRE MICHEL MACEDO
+Michel Macedo é neuropsicopedagogo registrado (SBNPp nº 24796), empreendedor, estrategista e fundador da Michel Macedo Holding. Atende todo o Brasil 100% digitalmente. CNPJ: 54.760.141/0001-31. Email: oficial@michelhold.net.
+
+## SERVIÇOS
+1. Neuropsicopedagogia (SBNPp nº 24796) — avaliação, intervenção, desenvolvimento de potencial humano
+2. Consultoria Estratégica para PMEs — diagnóstico organizacional, planejamento, mentoria executiva
+3. Assessoria Acadêmica — TCC, pesquisas, projetos, metodologia científica
+4. Soluções Tecnológicas — SaaS, automações com IA, produtos digitais
+5. Treinamento & Desenvolvimento — capacitação corporativa, workshops de neurociência
+6. Criação de Conteúdo Digital — copywriting, roteiros, posicionamento de autoridade
+
+## DIFERENCIAIS
+- Integração única: neurociência + estratégia empresarial + tecnologia
+- Registro profissional SBNPp nº 24796
+- Produtos SaaS proprietários (Mydow, TEO, Pya)
+- Atendimento B2B (empresas) e B2C (pessoas)
+
+## COMPORTAMENTO
+- Foco exclusivo na Michel Macedo Holding
+- Se perguntarem sobre outros assuntos, redirecione com elegância
+- Seja comercialmente estratégico: conecte cada dúvida a um serviço
+- Após 3-4 trocas ou ao perceber interesse real, sugira WhatsApp: "Para avançarmos, chame o Michel: (61) 99309-6532 💬"
+- Ao perceber curiosidade por conteúdo, sugira Instagram: "@michel_macedo_holding 📱"
+- Tom: profissional, acolhedor, premium, confiante. Português do Brasil.
+- Resposta objetiva, parágrafos fluidos, negrito para destaques`;
+
+let hist=[],busy=false;
+function load(){try{const s=localStorage.getItem(SK);if(s)hist=JSON.parse(s);}catch(e){hist=[];}}
+function save(){try{localStorage.setItem(SK,JSON.stringify(hist));}catch(e){}}
+
+function openChat(){
+  load();
+  document.getElementById('chat-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  render();
+  if(!hist.length){setTimeout(()=>addBot('Olá! 👋 Sou o **Chat Hold**, assistente oficial da Michel Macedo Holding.\n\nEstou aqui para apresentar nossos serviços e ajudar você a encontrar a solução ideal para sua empresa, carreira ou trajetória acadêmica.\n\nComo posso te ajudar hoje?'),400);}
+  setTimeout(()=>document.getElementById('chat-input').focus(),300);
+}
+
+function closeChat(){
+  document.getElementById('chat-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function render(){
+  const c=document.getElementById('chat-msgs');
+  c.innerHTML='';
+  hist.forEach(m=>appendDOM(m.role==='assistant'?'bot':'user',m.content));
+  c.scrollTop=c.scrollHeight;
+}
+
+function appendDOM(r,t){
+  const c=document.getElementById('chat-msgs');
+  const d=document.createElement('div');
+  d.className='msg '+r;
+  d.innerHTML=t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+  c.appendChild(d);c.scrollTop=c.scrollHeight;
+}
+
+function addBot(t){hist.push({role:'assistant',content:t});save();appendDOM('bot',t);}
+
+async function sendMsg(){
+  if(busy)return;
+  const inp=document.getElementById('chat-input');
+  const txt=inp.value.trim();if(!txt)return;
+  inp.value='';autoResize(inp);
+  hist.push({role:'user',content:txt});save();appendDOM('user',txt);
+  showDots();busy=true;
+  try{
+    const key=window.OPENAI_API_KEY||'';
+    const r=await fetch('https://api.openai.com/v1/chat/completions',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+      body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'system',content:SP},...hist],max_tokens:600,temperature:0.75})
+    });
+    const d=await r.json();
+    hideDots();
+    if(d.choices&&d.choices[0]){addBot(d.choices[0].message.content);}
+    else{addBot('Desculpe, tive uma dificuldade técnica. Para atendimento imediato, chame o Michel: **(61) 99309-6532** 💬');}
+  }catch(e){
+    hideDots();
+    addBot('Ops! Conexão instável. Para atendimento imediato: **(61) 99309-6532** 💬');
+  }
+  busy=false;
+}
+
+function showDots(){
+  const c=document.getElementById('chat-msgs');
+  const d=document.createElement('div');
+  d.className='msg typing';d.id='tdots';
+  d.innerHTML='<div class="dots"><span></span><span></span><span></span></div>';
+  c.appendChild(d);c.scrollTop=c.scrollHeight;
+}
+function hideDots(){const t=document.getElementById('tdots');if(t)t.remove();}
+function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
+function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,100)+'px';}
+document.getElementById('chat-modal').addEventListener('click',function(e){if(e.target===this)closeChat();});
+
+// Chave injetada pela Vercel — NÃO coloque aqui no código
+window.OPENAI_API_KEY='';
+</script>
+
+<!--
+DEPLOY VERCEL — HTML puro, sem framework.
+Suba: index.html + avatar-hold.jpeg
+
+Para o chat funcionar, adicione ANTES do </body>:
+  <script>window.OPENAI_API_KEY='sk-...';</script>
+
+OU use um arquivo /api/chat.js como proxy (mais seguro).
+A chave NUNCA deve ir para o GitHub.
+-->
+</body>
+</html>
