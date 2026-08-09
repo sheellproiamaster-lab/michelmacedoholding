@@ -387,7 +387,7 @@ section{position:relative;z-index:1;}
 /* ── CTA ── */
 #cta-section{padding:80px 0;background:var(--cream);}
 .cta-grid{
-  display:grid;grid-template-columns:1fr 1fr;
+  display:grid;grid-template-columns:repeat(3,1fr);
   gap:16px;margin-top:48px;
 }
 .cta-card{
@@ -413,6 +413,7 @@ section{position:relative;z-index:1;}
 }
 .cc-ico.wpp{background:rgba(37,211,102,0.1);border:1.5px solid rgba(37,211,102,0.2);}
 .cc-ico.ig{background:var(--orange-pale);border:1.5px solid rgba(200,87,26,0.18);}
+.cc-ico.li{background:rgba(10,102,194,0.1);border:1.5px solid rgba(10,102,194,0.2);}
 .cc-ico svg{width:22px;height:22px;}
 .cc-title{
   font-family:var(--font-d);font-size:22px;font-weight:500;
@@ -536,6 +537,7 @@ footer{
   .svc-grid{grid-template-columns:repeat(2,1fr);}
   .valor-grid{grid-template-columns:1fr;}
   .valor-metrics{grid-template-columns:repeat(2,1fr);}
+  .cta-grid{grid-template-columns:1fr;}
 }
 @media(max-width:640px){
   nav,#hero,.si,.fi{padding-left:20px;padding-right:20px;}
@@ -576,13 +578,13 @@ footer{
     <div class="hero-badge">Consultoria · Estratégia · Inovação</div>
     <h1 class="hero-title">Michel<br><em>Macêdo</em></h1>
     <p class="hero-sub">Especialista em Desenvolvimento Humano, Neurociência Aplicada e Estratégia Organizacional</p>
-    <p class="hero-desc">Atuo na interseção entre educação, pessoas e resultado — com atendimentos particulares em neuropsicopedagogia, consultoria estratégica para empresas, assessoria acadêmica para universitários e programas de treinamento e desenvolvimento para equipes. Uma visão integrada de quem estuda pessoas profundamente e entrega resultado concreto.</p>
+    <p class="hero-desc">Atuo na interseção entre educação, pessoas e resultado, com atendimentos particulares em neuropsicopedagogia, consultoria estratégica para empresas, assessoria acadêmica para universitários e programas de treinamento e desenvolvimento para equipes. Uma visão integrada de quem estuda pessoas profundamente e entrega resultado concreto.</p>
     <div class="hero-ctas">
-      <a href="https://wa.me/5561993096532?text=Olá%20Michel!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20serviços%20da%20Holding." target="_blank" class="btn-p">
+      <a href="https://wa.me/5561993096532?text=Olá%20Michel!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20serviços." target="_blank" class="btn-p">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Fale comigo
       </a>
-      <a href="https://www.instagram.com/michel_macedo_holding?igsh=Y3I1bW9yZmI0Znk2" target="_blank" class="btn-o">
+      <a href="https://www.instagram.com/michel_macedo_me" target="_blank" class="btn-o">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         Me siga no Instagram
       </a>
@@ -608,7 +610,7 @@ footer{
 <section id="framework">
   <div class="si">
     <div class="sec-label">Método</div>
-    <h2 class="sec-title">Como a nossa<br><em>estratégia funciona</em></h2>
+    <h2 class="sec-title">Como a minha<br><em>estratégia funciona</em></h2>
     <p class="sec-lead">Sete dimensões integradas que garantem coerência, profundidade e resultados consistentes em cada projeto.</p>
     <div class="s7-grid">
       <div class="s7-card">
@@ -633,7 +635,7 @@ footer{
         <div class="s7-num">04</div>
         <div class="s7-letter">S</div>
         <div class="s7-name">Shared Values</div>
-        <div class="s7-desc">Excelência, ética, inovação e impacto humano — os valores que norteiam cada entrega.</div>
+        <div class="s7-desc">Excelência, ética, inovação e impacto humano, os valores que norteiam cada entrega.</div>
       </div>
       <div class="s7-card">
         <div class="s7-num">05</div>
@@ -645,7 +647,7 @@ footer{
         <div class="s7-num">06</div>
         <div class="s7-letter">S</div>
         <div class="s7-name">Staff</div>
-        <div class="s7-desc">Especialistas multidisciplinares em neuropsicopedagogia, tecnologia, gestão e conteúdo.</div>
+        <div class="s7-desc">Especialista multidisciplinar em neuropsicopedagogia, tecnologia, gestão e conteúdo.</div>
       </div>
       <div class="s7-card">
         <div class="s7-num">07</div>
@@ -661,7 +663,7 @@ footer{
 <section id="services">
   <div class="si">
     <div class="sec-label">Áreas de Atuação</div>
-    <h2 class="sec-title">O que a <em>Holding</em><br>entrega</h2>
+    <h2 class="sec-title">O que eu<br><em>entrego</em></h2>
     <p class="sec-lead">Seis frentes de atuação integradas, lideradas por um especialista com visão única de desenvolvimento humano e inovação.</p>
     <div class="svc-grid">
 
@@ -737,7 +739,7 @@ footer{
     <div class="sec-label" style="justify-content:center;">Produto</div>
     <h2 class="sec-title">Conheça o <em>TEO</em></h2>
     <p style="font-family:var(--font-d);font-size:clamp(18px,2.2vw,26px);font-weight:300;font-style:italic;color:var(--orange);margin-bottom:26px;">Tecnologia a serviço de quem mais precisa</p>
-    <p class="sec-lead" style="margin:0 auto 40px;max-width:640px;">O TEO é um agente de inteligência artificial desenvolvido exclusivamente para famílias atípicas. Uma ferramenta que orienta, organiza e apoia no dia a dia de quem cuida de crianças e adultos com necessidades especiais — com linguagem acessível, respostas precisas e presença constante.</p>
+    <p class="sec-lead" style="margin:0 auto 40px;max-width:640px;">O TEO é um agente de inteligência artificial desenvolvido exclusivamente para famílias atípicas, criado por Michel Macedo. Uma ferramenta que orienta, organiza e apoia no dia a dia de quem cuida de crianças e adultos com necessidades especiais, com linguagem acessível, respostas precisas e presença constante.</p>
     <a href="https://www.teo-ia.com.br" target="_blank" class="btn-p">Acessar o TEO</a>
   </div>
 </section>
@@ -745,9 +747,9 @@ footer{
 <!-- PROPOSTA DE VALOR -->
 <section id="valor">
   <div class="si">
-    <div class="sec-label">Por que a Holding</div>
+    <div class="sec-label">Diferenciais</div>
     <h2 class="sec-title">Proposta de<br><em>Valor</em></h2>
-    <p class="sec-lead">Uma visão estratégica clara sobre o que diferencia a Michel Macedo Holding e o impacto que cada projeto gera.</p>
+    <p class="sec-lead">Uma visão estratégica clara sobre o que me diferencia e o impacto que cada projeto gera.</p>
     <div class="valor-grid">
       <div class="vp">
         <div class="vp-label">Para Empresas · B2B</div>
@@ -787,7 +789,7 @@ footer{
     <div class="sec-label">Conecte-se</div>
     <h2 class="sec-title">Pronto para o próximo<br><em>passo?</em></h2>
     <div class="cta-grid">
-      <a href="https://wa.me/5561993096532?text=Olá%20Michel!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20serviços%20da%20Holding." target="_blank" class="cta-card">
+      <a href="https://wa.me/5561993096532?text=Olá%20Michel!%20Vim%20pelo%20site%20e%20quero%20conhecer%20os%20serviços." target="_blank" class="cta-card">
         <div class="cc-ico wpp">
           <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </div>
@@ -795,12 +797,20 @@ footer{
         <div class="cc-sub">(61) 99309-6532 · Resposta rápida · Atendimento premium</div>
         <div class="cc-arrow">→</div>
       </a>
-      <a href="https://www.instagram.com/michel_macedo_holding?igsh=Y3I1bW9yZmI0Znk2" target="_blank" class="cta-card accent-card">
+      <a href="https://www.instagram.com/michel_macedo_me" target="_blank" class="cta-card accent-card">
         <div class="cc-ico ig">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </div>
         <div class="cc-title">Me siga no Instagram</div>
-        <div class="cc-sub">@michel_macedo_holding · Conteúdo diário sobre estratégia, negócios e desenvolvimento</div>
+        <div class="cc-sub">@michel_macedo_me · Conteúdo diário sobre estratégia, negócios e desenvolvimento</div>
+        <div class="cc-arrow">→</div>
+      </a>
+      <a href="https://www.linkedin.com/in/michel-macedo-309a4918b" target="_blank" class="cta-card li-card">
+        <div class="cc-ico li">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0A66C2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div class="cc-title">Me conecte no LinkedIn</div>
+        <div class="cc-sub">Michel Macêdo · Trajetória, bastidores e conteúdo profissional</div>
         <div class="cc-arrow">→</div>
       </a>
     </div>
@@ -812,7 +822,7 @@ footer{
   <div class="fi">
     <div class="ft">
       <div>
-        <div class="fb-logo">Michel Macedo <span>Holding</span></div>
+        <div class="fb-logo">Michel <span>Macêdo</span></div>
         <div class="fb-sub">Consultoria Estratégica · Tecnologia · Desenvolvimento Humano</div>
       </div>
       <div class="fl">
@@ -824,9 +834,9 @@ footer{
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           (61) 99309-6532
         </a>
-        <a href="https://www.instagram.com/michel_macedo_holding?igsh=Y3I1bW9yZmI0Znk2" target="_blank">
+        <a href="https://www.instagram.com/michel_macedo_me" target="_blank">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          @michel_macedo_holding
+          @michel_macedo_me
         </a>
         <a href="https://www.linkedin.com/in/michel-macedo-309a4918b" target="_blank">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -836,7 +846,7 @@ footer{
     </div>
     <div class="fdiv"></div>
     <div class="fbot">
-      <p>© 2026 Michel Macedo Holding · Todos os direitos reservados</p>
+      <p>© 2026 Michel Macêdo · Todos os direitos reservados</p>
       <span>CNPJ: 54.760.141/0001-31</span>
     </div>
   </div>
@@ -883,7 +893,7 @@ PRODUTO: O TEO é um agente de inteligência artificial exclusivo para famílias
 Quando alguém quiser contato, ofereça:
 WhatsApp: (61) 99309-6532
 E-mail: oficial@michelhold.net
-Instagram: @michel_macedo_holding
+Instagram: @michel_macedo_me
 LinkedIn: linkedin.com/in/michel-macedo-309a4918b
 
 Diga que pode entrar em contato diretamente por qualquer um desses canais.`;
